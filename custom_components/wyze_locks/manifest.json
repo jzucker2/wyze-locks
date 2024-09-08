@@ -1,0 +1,10 @@
+{
+  "domain": "wyze_locks",
+  "name": "Wyze Locks",
+  "documentation": "https://github.com/jzucker2/wyze-locks",
+  "issue_tracker": "https://github.com/jzucker2/wyze-locks/issues",
+  "dependencies": [],
+  "config_flow": true,
+  "codeowners": ["@jzucker2"],
+  "requirements": []
+}
