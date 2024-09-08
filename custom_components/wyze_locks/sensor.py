@@ -1,8 +1,6 @@
 """Sensor platform for Wyze Locks."""
-from .const import DEFAULT_NAME
-from .const import DOMAIN
-from .const import ICON
-from .const import SENSOR
+
+from .const import DEFAULT_NAME, DOMAIN, ICON, SENSOR
 from .entity import WyzeLocksEntity
 
 

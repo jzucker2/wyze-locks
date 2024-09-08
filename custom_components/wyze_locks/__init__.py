@@ -4,25 +4,26 @@ Custom integration to integrate Wyze Locks with Home Assistant.
 For more details about this integration, please refer to
 https://github.com/jzucker2/wyze-locks
 """
+
 import asyncio
-import logging
 from datetime import timedelta
+import logging
 
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import Config
-from homeassistant.core import HomeAssistant
+from homeassistant.core import Config, HomeAssistant
 from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-from homeassistant.helpers.update_coordinator import UpdateFailed
+from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .api import WyzeLocksApiClient
-from .const import CONF_PASSWORD
-from .const import CONF_EMAIL
-from .const import CONF_KEY_ID
-from .const import CONF_API_KEY
-from .const import DOMAIN
-from .const import PLATFORMS
-from .const import STARTUP_MESSAGE
+from .const import (
+    CONF_API_KEY,
+    CONF_EMAIL,
+    CONF_KEY_ID,
+    CONF_PASSWORD,
+    DOMAIN,
+    PLATFORMS,
+    STARTUP_MESSAGE,
+)
 
 SCAN_INTERVAL = timedelta(seconds=30)
 

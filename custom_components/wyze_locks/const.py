@@ -1,4 +1,5 @@
 """Constants for Wyze Locks."""
+
 # Base component constants
 NAME = "Wyze Locks"
 DOMAIN = "wyze_locks"

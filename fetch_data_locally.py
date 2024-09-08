@@ -4,7 +4,6 @@ import os
 import pprint
 import sys
 
-
 from custom_components.wyze_locks.api import WyzeLocksApiClient
 
 EMAIL = os.environ.get("WYZE_EMAIL")

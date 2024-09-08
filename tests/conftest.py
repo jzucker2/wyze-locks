@@ -1,4 +1,5 @@
 """Global fixtures for Wyze Locks integration."""
+
 from unittest.mock import patch
 
 import pytest

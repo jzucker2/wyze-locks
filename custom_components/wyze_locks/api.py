@@ -1,4 +1,5 @@
 """Sample API Client."""
+
 import asyncio
 import logging
 
@@ -13,9 +14,7 @@ HEADERS = {"Content-type": "application/json; charset=UTF-8"}
 
 
 class WyzeLocksApiClient:
-    def __init__(
-        self, username: str, password: str, key_id: str, api_key: str
-    ) -> None:
+    def __init__(self, username: str, password: str, key_id: str, api_key: str) -> None:
         """Sample API Client."""
         self._email = username
         self._password = password
@@ -48,7 +47,7 @@ class WyzeLocksApiClient:
             email=self.email,
             password=self.password,
             key_id=self.key_id,
-            api_key=self.api_key
+            api_key=self.api_key,
         )
         _LOGGER.debug("Wyze login response: %s", response)
         return response

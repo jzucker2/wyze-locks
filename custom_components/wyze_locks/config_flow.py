@@ -1,15 +1,18 @@
 """Adds config flow for Wyze Locks."""
-import voluptuous as vol
+
 from homeassistant import config_entries
 from homeassistant.core import callback
+import voluptuous as vol
 
 from .api import WyzeLocksApiClient
-from .const import CONF_PASSWORD
-from .const import CONF_EMAIL
-from .const import CONF_KEY_ID
-from .const import CONF_API_KEY
-from .const import DOMAIN
-from .const import PLATFORMS
+from .const import (
+    CONF_API_KEY,
+    CONF_EMAIL,
+    CONF_KEY_ID,
+    CONF_PASSWORD,
+    DOMAIN,
+    PLATFORMS,
+)
 
 
 class WyzeLocksFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
@@ -35,7 +38,7 @@ class WyzeLocksFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
                 user_input[CONF_EMAIL],
                 user_input[CONF_PASSWORD],
                 user_input[CONF_KEY_ID],
-                user_input[CONF_API_KEY]
+                user_input[CONF_API_KEY],
             )
             if valid:
                 return self.async_create_entry(
@@ -62,7 +65,7 @@ class WyzeLocksFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
                     vol.Required(CONF_EMAIL): str,
                     vol.Required(CONF_PASSWORD): str,
                     vol.Required(CONF_KEY_ID): str,
-                    vol.Required(CONF_API_KEY): str
+                    vol.Required(CONF_API_KEY): str,
                 }
             ),
             errors=self._errors,
