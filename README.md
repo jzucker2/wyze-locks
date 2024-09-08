@@ -94,3 +94,7 @@ Code template was mainly taken from [@Ludeeus](https://github.com/ludeeus)'s [in
 [releases-shield]: https://img.shields.io/github/release/jzucker2/wyze-locks.svg?style=for-the-badge
 [releases]: https://github.com/jzucker2/wyze-locks/releases
 [user_profile]: https://github.com/jzucker2
+
+## Notes
+
+- https://github.com/shauntarves/wyze-sdk
