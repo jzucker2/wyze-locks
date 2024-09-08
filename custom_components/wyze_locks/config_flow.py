@@ -1,14 +1,18 @@
 """Adds config flow for Wyze Locks."""
-import voluptuous as vol
+
 from homeassistant import config_entries
 from homeassistant.core import callback
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
+import voluptuous as vol
 
 from .api import WyzeLocksApiClient
-from .const import CONF_PASSWORD
-from .const import CONF_USERNAME
-from .const import DOMAIN
-from .const import PLATFORMS
+from .const import (
+    CONF_API_KEY,
+    CONF_EMAIL,
+    CONF_KEY_ID,
+    CONF_PASSWORD,
+    DOMAIN,
+    PLATFORMS,
+)
 
 
 class WyzeLocksFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
@@ -31,11 +35,14 @@ class WyzeLocksFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
 
         if user_input is not None:
             valid = await self._test_credentials(
-                user_input[CONF_USERNAME], user_input[CONF_PASSWORD]
+                user_input[CONF_EMAIL],
+                user_input[CONF_PASSWORD],
+                user_input[CONF_KEY_ID],
+                user_input[CONF_API_KEY],
             )
             if valid:
                 return self.async_create_entry(
-                    title=user_input[CONF_USERNAME], data=user_input
+                    title=user_input[CONF_EMAIL], data=user_input
                 )
             else:
                 self._errors["base"] = "auth"
@@ -54,16 +61,21 @@ class WyzeLocksFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
         return self.async_show_form(
             step_id="user",
             data_schema=vol.Schema(
-                {vol.Required(CONF_USERNAME): str, vol.Required(CONF_PASSWORD): str}
+                {
+                    vol.Required(CONF_EMAIL): str,
+                    vol.Required(CONF_PASSWORD): str,
+                    vol.Required(CONF_KEY_ID): str,
+                    vol.Required(CONF_API_KEY): str,
+                }
             ),
             errors=self._errors,
         )
 
-    async def _test_credentials(self, username, password):
+    async def _test_credentials(self, email, password, key_id, api_key):
         """Return true if credentials is valid."""
         try:
-            session = async_create_clientsession(self.hass)
-            client = WyzeLocksApiClient(username, password, session)
+            client = WyzeLocksApiClient(email, password, key_id, api_key)
+            # FIXME: do something more than just log in
             await client.async_get_data()
             return True
         except Exception:  # pylint: disable=broad-except
@@ -102,5 +114,5 @@ class WyzeLocksOptionsFlowHandler(config_entries.OptionsFlow):
     async def _update_options(self):
         """Update config entry options."""
         return self.async_create_entry(
-            title=self.config_entry.data.get(CONF_USERNAME), data=self.options
+            title=self.config_entry.data.get(CONF_EMAIL), data=self.options
         )

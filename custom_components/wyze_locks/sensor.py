@@ -1,8 +1,6 @@
 """Sensor platform for Wyze Locks."""
-from .const import DEFAULT_NAME
-from .const import DOMAIN
-from .const import ICON
-from .const import SENSOR
+
+from .const import DEFAULT_NAME, DOMAIN, ICON, SENSOR
 from .entity import WyzeLocksEntity
 
 
@@ -32,5 +30,5 @@ class WyzeLocksSensor(WyzeLocksEntity):
 
     @property
     def device_class(self):
-        """Return de device class of the sensor."""
+        """Return the device class of the sensor."""
         return "wyze_locks__custom_device_class"

@@ -1,9 +1,10 @@
 """Constants for Wyze Locks."""
+
 # Base component constants
 NAME = "Wyze Locks"
 DOMAIN = "wyze_locks"
 DOMAIN_DATA = f"{DOMAIN}_data"
-VERSION = "0.2.0"
+VERSION = "0.3.0"
 
 ATTRIBUTION = "Data provided by http://jsonplaceholder.typicode.com/"
 ISSUE_URL = "https://github.com/jzucker2/wyze-locks/issues"
@@ -17,14 +18,17 @@ BINARY_SENSOR_DEVICE_CLASS = "connectivity"
 # Platforms
 BINARY_SENSOR = "binary_sensor"
 SENSOR = "sensor"
-SWITCH = "switch"
-PLATFORMS = [BINARY_SENSOR, SENSOR, SWITCH]
+LOCK = "lock"
+PLATFORMS = [BINARY_SENSOR, SENSOR, LOCK]
 
 
 # Configuration and options
 CONF_ENABLED = "enabled"
 CONF_USERNAME = "username"
+CONF_EMAIL = "email"
 CONF_PASSWORD = "password"
+CONF_KEY_ID = "key_id"
+CONF_API_KEY = "api_key"
 
 # Defaults
 DEFAULT_NAME = DOMAIN
