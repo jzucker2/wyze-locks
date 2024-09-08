@@ -17,14 +17,16 @@ BINARY_SENSOR_DEVICE_CLASS = "connectivity"
 # Platforms
 BINARY_SENSOR = "binary_sensor"
 SENSOR = "sensor"
-SWITCH = "switch"
-PLATFORMS = [BINARY_SENSOR, SENSOR, SWITCH]
+PLATFORMS = [BINARY_SENSOR, SENSOR]
 
 
 # Configuration and options
 CONF_ENABLED = "enabled"
 CONF_USERNAME = "username"
+CONF_EMAIL = "email"
 CONF_PASSWORD = "password"
+CONF_KEY_ID = "key_id"
+CONF_API_KEY = "api_key"
 
 # Defaults
 DEFAULT_NAME = DOMAIN

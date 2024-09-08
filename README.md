@@ -98,3 +98,6 @@ Code template was mainly taken from [@Ludeeus](https://github.com/ludeeus)'s [in
 ## Notes
 
 - https://github.com/shauntarves/wyze-sdk
+- Custom integration requirements
+  - https://developers.home-assistant.io/docs/creating_integration_manifest/#requirements
+  - https://github.com/home-assistant/core/blob/dev/requirements.txt
