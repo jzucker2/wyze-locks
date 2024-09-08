@@ -1,10 +1,13 @@
 {
   "domain": "wyze_locks",
   "name": "Wyze Locks",
-  "documentation": "https://github.com/jzucker2/wyze-locks",
-  "issue_tracker": "https://github.com/jzucker2/wyze-locks/issues",
-  "dependencies": [],
-  "config_flow": true,
   "codeowners": ["@jzucker2"],
-  "requirements": []
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/jzucker2/wyze-locks",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/jzucker2/wyze-locks/issues",
+  "requirements": [],
+  "version": "0.2.0"
 }
