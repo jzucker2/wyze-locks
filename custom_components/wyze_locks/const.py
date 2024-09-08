@@ -18,7 +18,8 @@ BINARY_SENSOR_DEVICE_CLASS = "connectivity"
 # Platforms
 BINARY_SENSOR = "binary_sensor"
 SENSOR = "sensor"
-PLATFORMS = [BINARY_SENSOR, SENSOR]
+LOCK = "lock"
+PLATFORMS = [BINARY_SENSOR, SENSOR, LOCK]
 
 
 # Configuration and options
