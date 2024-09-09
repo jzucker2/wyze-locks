@@ -100,3 +100,5 @@ Code template was mainly taken from [@Ludeeus](https://github.com/ludeeus)'s [in
 - Custom integration requirements
   - https://developers.home-assistant.io/docs/creating_integration_manifest/#requirements
   - https://github.com/home-assistant/core/blob/dev/requirements.txt
+- https://github.com/alanjames1987/Wyze-HA
+- https://github.com/home-assistant/core/blob/dev/homeassistant/components/august/__init__.py

@@ -9,5 +9,5 @@
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/jzucker2/wyze-locks/issues",
   "requirements": ["wyze-sdk==2.2.0"],
-  "version": "0.3.0"
+  "version": "0.4.0"
 }

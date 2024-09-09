@@ -4,7 +4,7 @@
 NAME = "Wyze Locks"
 DOMAIN = "wyze_locks"
 DOMAIN_DATA = f"{DOMAIN}_data"
-VERSION = "0.3.0"
+VERSION = "0.4.0"
 
 ATTRIBUTION = "Data provided by http://jsonplaceholder.typicode.com/"
 ISSUE_URL = "https://github.com/jzucker2/wyze-locks/issues"
