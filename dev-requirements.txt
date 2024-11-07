@@ -1,2 +1,2 @@
-homeassistant==2024.9.1
+homeassistant==2024.11.0
 wyze-sdk==2.2.0
